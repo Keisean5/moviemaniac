@@ -5,13 +5,13 @@
 }
 
 .movie_list_heading {
-  font-style: 26px;
+  font-size: 26px;
   color: #ffe400;
 }
 
 .movie_filter {
   list-style: none;
-  font-style: 16px;
+  font-size: 16px;
 }
 
 .movie_filter_item {
@@ -20,6 +20,7 @@
 }
 
 .movie_filter_item.active {
+  /* user can see what filter they selected */
   border-bottom: 1px solid #e6e6e6;
   font-weight: 500;
 }
@@ -34,4 +35,10 @@
   height: 30px;
   padding: 0 5px;
   margin: 0 10px;
+}
+
+.movie_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
