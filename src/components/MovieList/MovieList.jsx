@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import _ from "lodash";
 
 import "./MovieList.css";
-import Fire from "../../assets/fire.png";
+
 import MovieCard from "./MovieCard";
 import FilterGroup from "./FilterGroup";
 
-const MovieList = () => {
+const MovieList = ({ type, title, emoji }) => {
   //display full, original list from the API
   const [movies, setMovies] = useState([]);
 
@@ -40,7 +40,7 @@ const MovieList = () => {
 
   const fetchMovies = async () => {
     const response = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=7227a275ce2178dd2da26e46a6e575ea"
+      `https://api.themoviedb.org/3/movie/${type}?api_key=7227a275ce2178dd2da26e46a6e575ea` // set the API call to grab the type attributes from App.jsx (type)
     );
     const data = await response.json();
     setMovies(data.results); //keep original data
@@ -72,10 +72,13 @@ const MovieList = () => {
   };
 
   return (
-    <section className="movie_list">
+    <section className="movie_list" id={type}>
       <header className="align_center movie_list_header">
         <h2 className="align_center movie_list_heading">
-          Popular <img src={Fire} alt="fire emoji" className="navbar_emoji" />
+          {/* set the title from attributes in MovieList in App.jsx  */}
+          {title}{" "}
+          <img src={emoji} alt={`${emoji} icon`} className="navbar_emoji" />{" "}
+          {/* set the emoji from attributes in MovieList in App.jsx  */}
         </h2>
         <div className="align_center movie_list_fs">
           <FilterGroup

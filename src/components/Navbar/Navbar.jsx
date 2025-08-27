@@ -13,13 +13,19 @@ const Navbar = () => {
 
       <div className="navbar_links">
         <DarkMode />
-        <a href="">
+        <a href="#popular">
+          {" "}
+          {/* set the link to scroll to the page that has popular */}
           Popular <img src={Fire} alt="fire emoji" className="navbar_emoji" />
         </a>
-        <a href="">
+        <a href="#top_rated">
+          {" "}
+          {/* set the link to scroll to the page that has top_rated */}
           Top Rated <img src={Star} alt="star emoji" className="navbar_emoji" />
         </a>
-        <a href="">
+        <a href="#upcoming">
+          {" "}
+          {/* set the link to scroll to the page that has upcoming */}
           Upcoming{" "}
           <img src={Party} alt="party face emoji" className="navbar_emoji" />
         </a>
