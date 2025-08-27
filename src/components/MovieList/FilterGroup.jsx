@@ -3,23 +3,20 @@ import React from "react";
 const FilterGroup = ({ minRating, onRatingClick, ratings }) => {
   return (
     <ul className="align_center movie_filter">
-      {
-        // use array for adding more ratings in future
-        ratings.map((rate) => (
-          <li
-            //set active style if the rating is selected
-            className={
-              minRating === rate
-                ? "movie_filter_item active"
-                : "movie_filter_item"
-            }
-            key={rate}
-            onClick={() => onRatingClick({ rate })}
-          >
-            {rate}+ Star
-          </li>
-        ))
-      }
+      {ratings.map((rate) => (
+        <li
+          //set active style if the rating is selected
+          className={
+            minRating === rate
+              ? "movie_filter_item active"
+              : "movie_filter_item"
+          }
+          key={rate}
+          onClick={() => onRatingClick(rate)}
+        >
+          {rate}+ Star
+        </li>
+      ))}
     </ul>
   );
 };
